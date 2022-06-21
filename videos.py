@@ -3,8 +3,6 @@ from os import getenv
 
 from utils.console import print_step
 
-
-def check_done(
     redditobj,
 ):  # don't set this to be run anyplace that isn't subreddit.py bc of inspect stack
     """params:
@@ -15,9 +13,6 @@ def check_done(
         if video["id"] == str(redditobj):
             if getenv("POST_ID"):
                 print_step(
-                    "You already have done this video but since it was declared specifically in the .env file the program will continue"
-                )
-                return redditobj
             print_step("Getting new post as the current one has already been done")
             return None
     return redditobj
